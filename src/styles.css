@@ -150,5 +150,75 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-body);
+  }
+}
+
+@utility prose-hc {
+  & h1,
+  & h2,
+  & h3 {
+    font-family: var(--font-display);
+    color: var(--primary-dark);
+    line-height: 1.2;
+  }
+  & h1 {
+    font-size: 2rem;
+    margin: 2rem 0 1rem;
+  }
+  & h2 {
+    font-size: 1.6rem;
+    margin: 2rem 0 0.75rem;
+  }
+  & h3 {
+    font-size: 1.3rem;
+    margin: 1.5rem 0 0.5rem;
+  }
+  & p {
+    margin: 0 0 1.15rem;
+    line-height: 1.85;
+    font-size: 1.06rem;
+  }
+  & ul,
+  & ol {
+    margin: 0 0 1.25rem 1.35rem;
+    line-height: 1.8;
+  }
+  & ul {
+    list-style: disc;
+  }
+  & ol {
+    list-style: decimal;
+  }
+  & blockquote {
+    margin: 1.5rem 0;
+    padding: 1rem 1.25rem;
+    border-left: 3px solid var(--accent);
+    background: var(--secondary);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+  }
+  & a {
+    color: var(--primary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  & img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    margin: 1.5rem 0 0.5rem;
+    box-shadow: var(--shadow-soft);
+  }
+  & figure {
+    margin: 1.75rem 0;
+  }
+  & figcaption {
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+    text-align: center;
+    margin-top: 0.5rem;
+    font-style: italic;
   }
 }
