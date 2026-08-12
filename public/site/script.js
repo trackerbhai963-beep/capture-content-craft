@@ -197,7 +197,7 @@ function initFloatingDrone() {
     mouseY = (event.clientY / window.innerHeight - 0.5) * 2;
   }, { passive: true });
 
-  loader.load('./assets/models/drone.glb', (gltf) => {
+  loader.load('/__l5e/assets-v1/d9cfeeb1-c35c-412d-817b-8e515771bfc2/drone.glb', (gltf) => {
     drone = gltf.scene;
 
     const box = new THREE.Box3().setFromObject(drone);
@@ -520,7 +520,7 @@ function setupDynamicGallery() {
   renderFilters();
   updateEmptyState(true);
 
-  fetch('./gallery-data.json', { cache: 'no-cache' })
+  fetch('/gallery-data.json', { cache: 'no-cache' })
     .then((response) => {
       if (!response.ok) throw new Error('Gallery data could not be loaded.');
       return response.json();

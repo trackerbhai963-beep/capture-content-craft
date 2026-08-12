@@ -177,7 +177,7 @@ function setupFormSubmit() {
 
     const whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
     const submitButton = bookingForm.querySelector('.submit-booking');
-    if (submitButton) submitButton.innerHTML = '<img src="./assets/icons/whatsapp.svg" alt="" /> Opening WhatsApp...';
+    if (submitButton) submitButton.innerHTML = '<img src="/assets/icons/whatsapp.svg" alt="" /> Opening WhatsApp...';
     window.location.href = whatsappURL;
   });
 }
