@@ -1,5 +1,5 @@
 import { createServerFn } from "@tanstack/react-start";
-import type { BlogPost } from "./blog-types";
+import { isValidSlug, type BlogPost } from "./blog-types";
 
 /** Public: all published posts, newest first. */
 export const listPublishedPosts = createServerFn({ method: "GET" }).handler(
@@ -19,7 +19,6 @@ export const listPublishedPosts = createServerFn({ method: "GET" }).handler(
 /** Public: one published post plus related posts. */
 export const getPublishedPost = createServerFn({ method: "GET" })
   .inputValidator((data: { slug: string }) => {
-    const { isValidSlug } = require("./blog-types") as typeof import("./blog-types");
     if (!isValidSlug(data.slug)) throw new Error("INVALID_SLUG");
     return data;
   })
