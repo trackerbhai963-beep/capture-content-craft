@@ -1,53 +1,11 @@
 import { Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
+import { SiteHeader } from "@/components/SiteHeader";
 
-const NAV = [
-  { label: "Home", href: "/#home" },
-  { label: "About", href: "/#about" },
-  { label: "Services", href: "/#services" },
-  { label: "Gallery", href: "/#gallery" },
-  { label: "Packages", href: "/#packages" },
-  { label: "Contact", href: "/#contact" },
-];
-
-export function SiteChrome({ children }: { children: ReactNode }) {
+export function SiteChrome({ children, active = "Blog" }: { children: ReactNode; active?: string }) {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <header className="sticky top-0 z-40 border-b border-border/70 bg-background/90 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-6 gap-y-3 px-4 py-3 sm:px-6">
-          <Link to="/" className="flex items-center gap-3">
-            <img
-              src="/assets/logo-nav.jpeg"
-              alt="Himadri Creation"
-              width={48}
-              height={48}
-              className="h-11 w-11 rounded-full object-cover shadow-soft"
-            />
-            <span className="font-display text-lg leading-tight font-semibold text-primary">
-              Himadri Creation
-              <span className="block text-[0.62rem] tracking-[0.22em] text-muted-foreground uppercase">
-                Memorycrafted Since 2018
-              </span>
-            </span>
-          </Link>
-          <nav className="order-3 flex w-full flex-wrap items-center gap-x-5 gap-y-2 text-sm sm:order-none sm:w-auto sm:ml-auto">
-            {NAV.map((item) => (
-              <a key={item.href} href={item.href} className="text-foreground/80 hover:text-primary">
-                {item.label}
-              </a>
-            ))}
-            <Link to="/blog" className="font-semibold text-primary">
-              Blog
-            </Link>
-          </nav>
-          <Link
-            to="/booking"
-            className="ml-auto rounded-full bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground shadow-soft transition hover:bg-primary-dark sm:ml-0"
-          >
-            Book Now
-          </Link>
-        </div>
-      </header>
+      <SiteHeader active={active} />
 
       {children}
 
